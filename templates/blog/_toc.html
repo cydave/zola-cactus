@@ -1,0 +1,21 @@
+<ol class="toc">
+    {% for h1 in page.toc %}
+    <li class="toc-item toc-level-2">
+        <a class="toc-link" href="{{ h1.permalink |safe }}">{{ h1.title }}</a>
+        {% if h1.children %}
+        {% for h2 in h1.children %}
+        <li class="tocitem toc-level-3">
+            <a class="toc-link" href="{{ h2.permalink |safe }}">{{ h2.title }}</a>
+            {% if h2.children %}
+            {% for h3 in h2.children %}
+            <li class="tocitem toc-level-4">
+                <a class="toc-link" href="{{ h3.permalink |safe }}">{{ h3.title }}</a>
+            </li>
+            {% endfor %}
+            {% endif %}
+        </li>
+        {% endfor %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ol>

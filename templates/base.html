@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include '_partials/head.html' %}
+<body class="max-width mx-auto px3 ltr">
+    <div class="content index py4">
+        {% block header %}
+        {% include '_partials/header.html' %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% block footer %}
+        {% include '_partials/footer.html' %}
+        {% endblock %}
+    </div>
+    <link rel="stylesheet" href="{{ get_url(path='lib/font-awesome/css/all.min.css') |safe }}">
+    <script src="{{ get_url(path='lib/jquery/jquery.min.js') |safe }}"></script>
+    <script src="{{ get_url(path='js/main.js') |safe }}"></script>
+</body>
+</html>

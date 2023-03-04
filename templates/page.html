@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ page.title }}
+{% endblock %}
+
+{% block content %}
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <div class="content" itemprop="articleBody">
+    {{ page.content |safe }}
+    </div>
+</article>
+{% endblock %}

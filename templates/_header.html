@@ -1,0 +1,17 @@
+<header id="header">
+    <a href="{{ get_url(path='/')|safe }}">
+        <div id="title">
+            <h1>{{ config.title }}</h1>
+        </div>
+    </a>
+    <div id="nav">
+        <ul>
+          <li class="icon">
+            <a href="#" aria-label=""><i class="fas fa-bars fa-2x"></i></a>
+          </li>
+          {% for nav in config.extra.navigation %}
+          <li><a href="{{ nav.link }}">{{ nav.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+</header>

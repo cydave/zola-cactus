@@ -1,0 +1,45 @@
+name = "cactus"
+description = "A responsive, clean and simple Zola theme for a personal website."
+min_version = "0.4.0"
+demo = ""
+
+[author]
+name = "cydave"
+homepage = "https://github.com/cydave"
+
+
+[original]
+author = "Pieter Robberechts"
+repo = "https://github.com/probberechts/hexo-theme-cactus"
+
+
+[extra]
+navigation_logo = "/images/logo.png"
+navigation = [
+    { name = "Home", link = "/" },
+    { name = "About", link = "/about" },
+    { name = "Writing", link = "/archive" },
+    { name = "Projects", link = "/" },
+]
+socials = [
+    { name = "github", link = "" },
+    { name = "gitlab", link = "" },
+    { name = "twitter", link = "" },
+    { name = "mastodon", link = "" },
+    { name = "facebook", link = "" },
+    { name = "linkedin", link = "" },
+    { name = "mail", link = "" }
+]
+projects = [
+    { name = "Zola", description = "A fast static site generator in a single binary with everything built-in.", link = "https://www.getzola.org/" },
+    { name = "Font Awesome", description = "The iconic font and CSS toolkit", link = "http://fontawesome.io/" },
+    { name = "Bootstrap", description = "The most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.", link = "Bootstrap" },
+    { name = "Python", description = "Python is a programming language that lets you work quickly and integrate systems more effectively.", link = "" },
+    { name = "D3.js", description = "A JavaScript library for manipulating documents based on data.", link = "https://d3js.org/" }
+]
+post_date_format = "%d %b %Y"
+
+    [extra.error_404]
+    enabled = true
+    title = "404 Page Not Found"
+    description = "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."

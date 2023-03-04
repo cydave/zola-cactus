@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="about">
+    {% if config.description -%}
+    {{ config.description | markdown(inline=true) | safe }}
+    {% endif -%}
+</section>
+
+<section id="writing">
+    <span class="h1"><a href="/blog">Writing</a></span>
+    <ul class="post-list">
+        {% set blog = get_section(path="blog/_index.md") %}
+        {% for post in blog.pages | slice(end=5) %}
+        <li class="post-item">
+            <div class="meta"><time datetime="{{ post.date|date(format='%+') }}" itemprop="datePublished">{{ post.date | date(format=config.extra.post_date_format) }}</time></div>
+            <span><a href="{{ post.permalink }}">{{ post.title }}</a></span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% if config.extra.projects %}
+<section id="projects">
+    <span class="h1"><a href="/projects">Projects</a></span>
+    <ul class="project-list">
+        {% for project in config.extra.projects %}
+        <li class="project-item">
+            <a href="{{ project.link }}">{{ project.name }}</a>: <p>{{ project.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}
+{% endblock %}
